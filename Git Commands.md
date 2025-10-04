@@ -13,6 +13,7 @@
 5. git config --list (to see changes to config in terminal)
 6. git config --global diff.tool <diff_tool_name>
 7. git config --global difftool.<diff_tool_name>.cmd "nano --wait --diff $LOCAL $REMOTE"
+
 can do -> _git config --help / git config -h_
 
 
@@ -115,3 +116,41 @@ for a visual diff tool, set configs 6 and 7 and then do this :-
 git difftool
 git difftool --staged
 ```
+
+
+-> Check commit history :-
+```
+git log #flags like --oneline and --reverse can be added
+```
+HEAD -> <current_working_branch>
+
+
+-> To view contents of a commit or file in that commit :-
+```
+git show <commit id> #can see commit id using log
+git show HEAD~n #contents of commit n commits before head 
+git show HEAD~n:<any_file>
+```
+and to view files stored in a commit :-
+```
+git ls-tree HEAD~n #gives files with their unique id
+git show <fileunique_id>
+```
+
+
+-> To unstage files :-
+```
+git restore --staged <file_name>
+```
+and to discard local changes in directory :-
+```
+git restore <file_name> #takes version of file in staging area and copies it to directory
+```
+if file is not in staging area then remove it using git clean. use git clean -h for help.
+
+
+-> If you accidentally deleted a file from both directory and staging area, you can restore that file :-
+```
+git restore --source=HEAD~n <file_name>
+```
+HEAD~n defines the version of file you want to restore. To restore the version of file 4 commits before head, do HEAD~4.
