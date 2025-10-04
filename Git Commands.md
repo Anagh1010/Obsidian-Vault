@@ -10,6 +10,9 @@
 2. git config --global user.email *your_email*
 3. git config --global core.editor *nano* (or any editor of your choice)
 4. git config --global core.autocrlf input (or true) (to handle end of lines)
+5. git config --list (to see changes to config in terminal)
+6. git config --global diff.tool <diff_tool_name>
+7. git config --global difftool.<diff_tool_name>.cmd "nano --wait --diff $LOCAL $REMOTE"
 can do -> _git config --help / git config -h_
 
 
@@ -28,11 +31,12 @@ git commit -m "any message you want to associate with this snapshot"
 If there is a file in staging area any changes are made to that file in folder, we will have to add that file again before committing to make sure the changes have been committed.
 
 
--> the local repo can be stored on a remote repository as well(like GitHub).You can then push the changes of the local to the remote. To do this :-
+-> the local repo can be stored on a remote repository as well(like GitHub).You can then push the changes of the local to the remote. To do this ('origin' is remote name) :-
 ```
 git remote add origin https://github.com/your-username/your-repository.git
 git push -u origin <branch_name>
 ```
+-u flag used to set upstream. if we don't use -u then we will have to type git push origin main everytime.
 you can set branch name as :-
 ```
 git branch -M <branch_name>
@@ -98,4 +102,16 @@ git commit -m "added gitignore"
 If a file or folder has already been committed then adding it to .gitignore will not make git ignore it. To fix it, remove it from staging area.
 ```
 git rm --cached something.bin(only removes from staging area)
+```
+
+
+-> To check what all has been changed in files in directory or staging area :-
+```
+git diff #check folder files
+git diff --staged #check staged files
+```
+for a visual diff tool, set configs 6 and 7 and then do this :-
+```
+git difftool
+git difftool --staged
 ```
