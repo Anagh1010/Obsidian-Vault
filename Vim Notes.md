@@ -1,6 +1,6 @@
 
 [Vim Cheat Sheet 1](https://vim.rtorr.com/)
-[VIm Cheat Sheet 2](https://devhints.io/vim)
+[Vim Cheat Sheet 2](https://devhints.io/vim)
 [The Primeagen Playlist](https://www.youtube.com/playlist?list=PLm323Lc7iSW_wuxqmKx_xxNtJC_hJbQ7R)
 
 
