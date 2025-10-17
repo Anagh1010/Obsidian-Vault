@@ -53,6 +53,7 @@ commands can be :-
 - ctrl + u - jump half page up
 - shift + g - go all the way down to bottom of page
 - gg - all the way to the top
+- % - jumps to next parenthesis(goes to closing bracket if you are on opening bracket)
 
 ### Commands
 - d
